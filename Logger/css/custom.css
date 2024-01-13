@@ -7,16 +7,17 @@ div.console-div{
     display:block;
     padding-top:20px;
     padding-bottom:20px;
-    margin-top: 55px;
+    margin-top: 65px;
     margin-bottom: 20px;
     line-height:normal;
+    min-height: calc(100vh - 120px);
 }
 #console-div div{
     display:inline-block;
 }
 .head-tool{
     color:#227799;
-    padding:15px;
+    padding: 0px 20px;
     float: right;
 }
 .bg-unread{

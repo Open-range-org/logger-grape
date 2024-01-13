@@ -2,32 +2,44 @@
 <html>
 <head>
 <title>Log Console</title>
-<script type="text/javascript" src="content/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="content/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-<link href='content/bootstrap.min.css' rel='stylesheet' type='text/css'>
-<link href='content/custom.css' rel='stylesheet' type='text/css'>
+<link href='css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link href='css/custom.css' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="settings.js"></script>
-<script type="text/javascript" src="content/script.js"></script>
-<link rel="icon" href="fevicon.png" type="image/gif" sizes="16x16">
+<script type="text/javascript" src="js/script.js"></script>
+<link rel="icon" href="../images/grapes.png" type="image/gif" sizes="16x16">
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" id="menu">    
-        <div class="container">
-            <div class="navbar-header">
-              <a href="#" class="navbar-brand" style="color: #229977;"><i class="glyphicon glyphicon-fire"></i> Tool - Logger</a>
-            </div>   
-            <div class="head-tool">  
+    <div class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="menu"> 
+            
+            
+      <a href="#" class="home-link"><a href="#" class="navbar-brand" style="color: #229977;"><img src="./loggergrapemenulogo.png" style="height: 35px;"/></a></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+
+        </ul>
+        <div class="form-inline mt-2 mt-md-0">
+          <div class="head-tool">  
                              
-                <span>Total log count (<b id="logCount"></b>)</span> 
-                <button type="button" id="refresh" class="btn btn-xs btn-success"> <i class="glyphicon glyphicon-random"></i> Refresh</button>
-                <button type="button" id="markAllRead" class="btn btn-xs btn-info"> <i class="glyphicon glyphicon-eye-open"></i> Mark all read</button>
-                <button type="button" id="info" class="btn btn-xs btn-warning" data-toggle="modal" data-target="#myModal"> <i class="glyphicon glyphicon-cloud"></i>Info</button>
-                <a class="btn btn-info  btn-xs" href="index.html#bottom"><i class="glyphicon glyphicon-arrow-down"></i></a>
-                <a class="btn btn-info btn-xs" href="index.html#top"><i class="glyphicon glyphicon-arrow-up"></i></a>
-            </div>  
-            </div>    
+            <span>Total log count (<b id="logCount"></b>)</span> 
+            <button type="button" id="refresh" class="btn btn-sm btn-success"> <i class="fas fa-spinner"></i> Refresh</button>
+            <button type="button" id="markAllRead" class="btn btn-sm btn-info"> <i class="fas fa-eye"></i> Mark all read</button>
+            <button type="button" id="info" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#myModal">
+              <i class="fas fa-wrench"></i> Config</button>
+            <a class="btn btn-info  btn-sm" href="index.html#bottom"><i class="fas fa-chevron-up"></i></a>
+            <a class="btn btn-info btn-sm" href="index.html#top"><i class="fas fa-chevron-down"></i></a>
+        </div>  
+        </div>
+      </div>
     </div>  
 
     <div class="col-sm-12">
@@ -37,7 +49,10 @@
           
         </div>
     </div>
-<span id="bottom" class="footer col-sm-12 text-info"> 2022 | Open Source</span>
+<span id="bottom" class="footer col-sm-12 text-info"> &copy; 2024 | 
+  <i class="fab fa-osi"></i> Open Source |  
+  Developed by <a href="http://sarkarnihar.in" target="_blank">Nihar</a> | 
+  <a href="https://open-range-org.github.io">Open Range Org</a> </span>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
