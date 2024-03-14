@@ -1,23 +1,54 @@
 $(document).ready(function () {
     var path = settings.path;
+    var directory = settings.directory;
     var lastIndex = 0;
     var logCount = 0;
     var newUnreadLogCount = 0;
-    FileLoad();
-    setInterval(function () { FileLoad(); }, 2000);
+    var fileNameList = [];
+    loadFile();
+    loadDirectory();
+    setInterval(function () { loadFile(); }, 2000);
     $('#refresh').click(function () {
-        FileLoad();
+        loadFile();
     });
 
     $('#info').click(function () {
         $('#modal-body').html(" log path is : " + path);
+    });
+    $(document).on('change', '#file-select', function() {
+        path= `${directory}/${$(this).val()}`;
+        $('#console-div').empty();
+        logCount=0;
+        lastIndex=0;
+        newUnreadLogCount=0;
+        loadFile();
     });
     $('#markAllRead').click(function () {
         $('.warning-block').removeClass("bg-unread");
         $('title').text("Logger Grape");
         newUnreadLogCount = 0;
     });
-    function FileLoad() {
+    function loadDirectory(){
+        let options= "";
+        $.ajax({ url: directory, dataType: 'html',
+        success: function(response) {
+             $('#hidden-directory').html(response);
+             setTimeout(() => {
+             $('#hidden-directory pre a').each(function () { 
+                let fileName= $(this).text();
+                if(fileName.includes(settings.filename)){
+                    fileNameList.push($(this).text());
+                    options+= `<option value="${fileName}">${fileName}</option>`;
+                }
+              });
+              $('#file-select').html(options)
+              console.log(fileNameList);
+              }, 100);
+            //  $('')
+            } 
+     });
+    }
+    function loadFile() {
         var lineArray = [];
         var xhttp = new XMLHttpRequest();
         method = "GET",

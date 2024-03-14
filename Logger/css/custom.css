@@ -42,3 +42,8 @@ padding-top: 10px;
     border-color:#ccc;
     font-size: 14px;
 }
+.file-select{
+    max-width: 150px;
+    min-width: 100px;
+    font-size: 12px;
+}
